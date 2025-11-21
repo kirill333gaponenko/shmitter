@@ -1,0 +1,17 @@
+import {createStore} from "redux"
+import {accountReducer} from "../reducer/accountReducer.js"
+
+
+const initialState = {
+    user:{
+        avatar: 'https://gravatar.com/avatar/000?d=monsterid',
+        name: 'Monster',
+    },
+    stats:{
+        followers: 0,
+        following: 0,
+    }
+}
+
+
+export const store = createStore(accountReducer, initialState)
