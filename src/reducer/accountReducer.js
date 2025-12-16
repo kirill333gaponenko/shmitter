@@ -13,14 +13,24 @@ export const accountReducer =(state,action)=>{
             const res = state.stats[action.payload[0]] + action.payload[1];
 
             console.log(state.stats[action.payload[0]])
-            return {...state,...state[Keys[1]],[action.payload[0]]: res < 0 ? 0 : res}
+            return {...state,
+                stats: {
+                ...state.stats,
+                    [action.payload[0]]: res < 0 ? 0 : res
+                }
+            }
         }
 
 
         case CHANGENAME :
-            return {...state,...state[Keys[0]],name:action.payload||state[Keys[0]].name};
+            return {...state,
+                user:{...state.user,name:action.payload||state.user.name}
+            };
         case CHANGEAVATAR :
-            return {...state,...state[Keys[0]],avatar:action.payload||state[Keys[0]].avatar}
+            return {...state,
+                user:{...state.user,avatar:action.payload||state.user.avatar}
+
+            }
         default:
             return state;
     }
