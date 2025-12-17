@@ -17,5 +17,5 @@ export const changeName = name =>({
 
 export const  changeStats = (statsType, sum) =>({
     type:CHANGESTATS,
-    payload: [statsType, sum],
+    payload: {statsType, sum},
 })

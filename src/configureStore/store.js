@@ -1,5 +1,5 @@
-import {createStore} from "redux"
-import {accountReducer} from "../reducer/accountReducer.js"
+import {legacy_createStore as createStore} from "redux"
+import {rootReducer} from "../reducer/rootReducer.js";
 
 
 const initialState = {
@@ -14,4 +14,4 @@ const initialState = {
 }
 
 
-export const store = createStore(accountReducer, initialState)
+export const store = createStore(rootReducer, initialState)

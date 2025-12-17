@@ -2,9 +2,6 @@
 import {CHANGESTATS,CHANGENAME,CHANGEAVATAR} from "../action/accountAction.js";
 
 export const accountReducer =(state,action)=>{
-    const Keys = Object.keys(state)
-    const innerKeyUser = Object.keys(Keys[0])
-    const innerKeyStats = Object.keys(Keys[1])
 
     console.log(state)
     switch(action.type){
