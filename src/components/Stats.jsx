@@ -1,8 +1,6 @@
 import Avatar from "./Avatar.jsx";
-import {useContext} from "react";
-import {ShmitterContext} from "../utils/context.js";
 import {useDispatch, useSelector} from "react-redux";
-import {changeStats} from "../action/accountAction.js";
+import {changeStats} from "../features/stats/statsSlice.js";
 
 const Stats = () => {
     // const {user, stats, changeStats} = useContext(ShmitterContext);
@@ -23,17 +21,17 @@ const Stats = () => {
             </div>
             <div className={'stats'}>
                 <div
-                    onClick={() => dispatch(changeStats('followers', 1))}
+                    onClick={() => dispatch(changeStats({statsType:'followers', sum:1}))}
                     onContextMenu={(e) => {
                         e.preventDefault();
-                        dispatch(changeStats('followers', -1));
+                        dispatch(changeStats({statsType:'followers', sum:-1}));
                     }}
                 >Followers: {followers}</div>
                 <div
-                    onClick={() => dispatch(changeStats('following', 1))}
+                    onClick={() => dispatch(changeStats({statsType:'following', sum:1}))}
                     onContextMenu={(e) => {
                         e.preventDefault();
-                        dispatch(changeStats('following', -1));
+                        dispatch(changeStats({statsType:'following', sum:-1}));
                     }}
                 >Following: {following}</div>
             </div>

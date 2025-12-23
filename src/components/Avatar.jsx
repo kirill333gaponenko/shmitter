@@ -1,10 +1,7 @@
-import {useContext} from "react";
-import {ShmitterContext} from "../utils/context.js";
 import {useDispatch, useSelector} from "react-redux";
-import {changeAvatar, changeName} from "../action/accountAction.js";
+import {changeAvatar, changeName} from "../features/user/userSlice.js";
 
 const Avatar = ({size}) => {
-    // const {user, changeAvatar,changeName} = useContext(ShmitterContext)
 
     const {avatar,name} = useSelector(state => state.user)
 
